@@ -1,0 +1,126 @@
+$max-width: 640px;
+$height: 400px;
+
+html, body{
+	margin: 0;
+	padding: 0;
+}
+
+.wrap{
+	position: relative;
+	margin: 0 auto;
+	max-width: $max-width;
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr;
+}
+.box{
+	opacity: 0;
+}
+
+.box{
+	max-width: $max-width;
+	width: 100%;
+	height: 400px;
+	margin-top: 20px;
+	display: grid;
+	grid-template-columns: 1fr;
+	margin: 20px auto;	
+	grid-area: 1 / 1 / 2 / 2;
+	transition: .3s;
+
+}
+.box_btn{
+	z-index: 7777;
+	width: $max-width;
+	height: $height;
+	margin: 20px auto;
+	position: relative;	
+	grid-area: 1 / 1 / 2 / 2;
+}
+.left_img{
+	width: 320px;
+	height: auto;	
+	background-repeat: no-repeat;
+	 grid-area: 1 / 1 / 2 / 2;
+	 z-index: 99;
+	 border-right-style: solid;
+	 border-right-color: white;
+	 border-right-width: 1px;	 
+
+}
+.right_img{
+	max-width: $max-width;
+	height: auto;	
+	background-repeat: no-repeat;
+    grid-area: 1 / 1 / 2 / 2;
+}
+.rng{
+	max-width: 450px;
+	width: 100%;
+	position: absolute;	
+	top: 45%;
+	left: 15%;
+	appearance: none;//иначе не будет работать стилизация, та что ниже
+	
+}
+.arrow_left{
+	width: 60px;
+	height: 60px;
+	background-image: url('img/arr_left.svg');
+	position:absolute;
+	top:45%;
+	left:5%;
+	cursor: pointer;
+	opacity: .7;
+}
+.arrow_right{
+	width: 60px;
+	height: 60px;
+	background-image: url('img/arr_right.svg');
+	position:absolute;
+	top:45%;
+	right:5%;
+	cursor: pointer;
+	opacity: .7;
+}
+.visible{
+	opacity: 1;
+}
+
+
+//стилизация input range
+input:focus, textarea:focus {
+        outline:none;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+
+ -webkit-appearance: none !important;
+  height: 0px; //высота дорожки 0 делает его невидимым
+
+} 
+//сам бегунок
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none !important; 
+  height: 60px;
+  width: 60px;  
+  //background-color: rgba(80, 55, 80, 0.5);
+  //transform: rotate(45deg);
+  background-image: url('img/slider1.svg');
+  opacity: .7;
+  background-repeat:no-repeat;  
+  cursor: pointer;
+  //margin-top: -14px; /* Вам нужно указать значение для поля в Chrome, но в Firefox и IE это происходит автоматически */
+ //box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Добавляем классные эффекты для слайдера! */
+}
+
+//анимируем доты
+
+
+@keyframes anidot {
+	0%{transform: scale(2);}
+	50%{
+		transform: scale(0);		
+	}
+	100%{transform: scale(1);}
+}
