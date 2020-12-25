@@ -50,8 +50,8 @@ html, body {
 }
 
 .left_img {
-  width: 320px;
-  height: auto;
+  width: calc(100%/2);
+  height: 400px;
   background-repeat: no-repeat;
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
@@ -94,6 +94,10 @@ html, body {
   top: 45%;
   left: 5%;
   cursor: pointer;
+  opacity: 0.5;
+}
+
+.arrow_left:hover {
   opacity: 0.7;
 }
 
@@ -105,6 +109,10 @@ html, body {
   top: 45%;
   right: 5%;
   cursor: pointer;
+  opacity: 0.5;
+}
+
+.arrow_right:hover {
   opacity: 0.7;
 }
 
@@ -129,6 +137,12 @@ input[type=range]::-webkit-slider-thumb {
   opacity: 0.7;
   background-repeat: no-repeat;
   cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+input[type=range]::-webkit-slider-thumb:hover {
+  opacity: 0.4;
 }
 
 @-webkit-keyframes anidot {

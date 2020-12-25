@@ -30,7 +30,7 @@ let wrap = document.querySelector(".wrap");
 
 //Чтобы добавить блок-слайд вызываем метод makediv("путь к левому фото", 
 //"путь к правому фото"). Все фото подготавливаются одного размера заранее
-//В данном примере 640х400 
+//В данном примере 640х400 см.стили
 	let box = new DoBox();
 	box.makediv('url(img/1.jpg)', 'url(img/2.jpg)');	
 	box.makediv('url(img/3.jpg)', 'url(img/4.jpg)');
@@ -155,7 +155,7 @@ function minus(){
 function reset(){
 	for(let img of divLeftImgAll){
 				rng.value = 0;
-				leftW = +rng.value+320;					
+				leftW = +rng.value + fotoLeftWidth;					
 				img.style.width = leftW+'px';
 				img.style.transition = '.3s';
 			}

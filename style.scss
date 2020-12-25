@@ -1,3 +1,5 @@
+//разрешение фото должно совпадать с этими параметрами
+
 $max-width: 640px;
 $height: 400px;
 
@@ -21,7 +23,7 @@ html, body{
 .box{
 	max-width: $max-width;
 	width: 100%;
-	height: 400px;
+	height: $height;
 	margin-top: 20px;
 	display: grid;
 	grid-template-columns: 1fr;
@@ -39,8 +41,9 @@ html, body{
 	grid-area: 1 / 1 / 2 / 2;
 }
 .left_img{
-	width: 320px;
-	height: auto;	
+	// width: 320px;
+	width: calc(100%/2); //левое фото - половина от основного
+	height: $height;	
 	background-repeat: no-repeat;
 	 grid-area: 1 / 1 / 2 / 2;
 	 z-index: 99;
@@ -56,11 +59,11 @@ html, body{
     grid-area: 1 / 1 / 2 / 2;
 }
 .rng{
-	max-width: 450px;
+	max-width: 450px; //подобрать опытным путем
 	width: 100%;
 	position: absolute;	
-	top: 45%;
-	left: 15%;
+	top: 45%; //подобрать опытным путем
+	left: 15%; //подобрать опытным путем
 	appearance: none;//иначе не будет работать стилизация, та что ниже
 	
 }
@@ -72,6 +75,9 @@ html, body{
 	top:45%;
 	left:5%;
 	cursor: pointer;
+	opacity: .5;
+}
+.arrow_left:hover{
 	opacity: .7;
 }
 .arrow_right{
@@ -82,6 +88,9 @@ html, body{
 	top:45%;
 	right:5%;
 	cursor: pointer;
+	opacity: .5;
+}
+.arrow_right:hover{
 	opacity: .7;
 }
 .visible{
@@ -110,8 +119,13 @@ input[type="range"]::-webkit-slider-thumb {
   opacity: .7;
   background-repeat:no-repeat;  
   cursor: pointer;
+  transition: .3s;
   //margin-top: -14px; /* Вам нужно указать значение для поля в Chrome, но в Firefox и IE это происходит автоматически */
  //box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Добавляем классные эффекты для слайдера! */
+}
+
+input[type="range"]::-webkit-slider-thumb:hover{
+	opacity: .4;
 }
 
 //анимируем доты
